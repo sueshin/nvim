@@ -34,3 +34,7 @@ trap "rm -f .git/tags.$$" EXIT
 ctags --tag-relative=yes -R -f .git/tags.$$
 mv .git/tags.$$ .git/tags
 ~~~
+
+~~~
+chmod 755 .git/hooks/ctags
+~~~
