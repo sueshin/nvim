@@ -49,3 +49,6 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = "tpope/vim-fugitive"
