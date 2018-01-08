@@ -11,8 +11,8 @@ export XDG_CONFIG_HOME=~/.config
 install neovim and set.
 ~~~
 $ brew install neovim
-$ mkdir ~/.config/nvim
-$ cd ~/.config/nvim
+$ mkdir ~/.config
+$ cd ~/.config
 $ git clone git@github.com:sueshin/nvim.git
 $ source ~/.bashrc
 ~~~
