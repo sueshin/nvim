@@ -33,20 +33,20 @@ set noswapfile
 "自動改行対策
 autocmd FileType text setlocal textwidth=0
 
-" 全角スペース対策
-function! ZenkakuSpace()
-    highlight ZenkakuSpace cterm=reverse ctermfg=DarkGray gui=reverse guifg=DarkGray
-endfunction
-if has('syntax')
-    augroup ZenkakuSpace
-        autocmd!
-        "ZenkakuSpace をカラーファイルで設定するなら、
-        "次の行をコメントアウト
-        autocmd ColorScheme       * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter * match ZenkakuSpace / /
-    augroup END
-    call ZenkakuSpace()
-endif
+" " 全角スペース対策
+" function! ZenkakuSpace()
+"     highlight ZenkakuSpace cterm=reverse ctermfg=DarkGray gui=reverse guifg=DarkGray
+" endfunction
+" if has('syntax')
+"     augroup ZenkakuSpace
+"         autocmd!
+"         "ZenkakuSpace をカラーファイルで設定するなら、
+"         "次の行をコメントアウト
+"         autocmd ColorScheme       * call ZenkakuSpace()
+"         autocmd VimEnter,WinEnter * match ZenkakuSpace / /
+"     augroup END
+"     call ZenkakuSpace()
+" endif
 "----------------------------------------
 " 各種プラグイン設定
 "----------------------------------------
