@@ -1,0 +1,48 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'frankier/neovim-colors-solarized-truecolor-only'
+
+# コメントON/OFFを手軽に実行
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# シングルクオートとダブルクオートの入れ替え等
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# インデントに色を付けて見やすくする
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+# emmet
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]] # ステータスライン
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {
+         \'colorscheme': 'solarized',
+         \'active': {
+          \  'left': [
+          \    ['mode', 'paste'],
+          \    ['readonly', 'filename', 'modified'],
+          \    ['ale'],
+          \  ]
+          \},
+          \'component_function': {
+          \  'ale': 'ALEStatus'
+          \}
+    \}
+    function! ALEStatus()
+      return ALEGetStatusLine()
+    endfunction
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
