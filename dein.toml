@@ -52,3 +52,6 @@ repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'

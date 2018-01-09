@@ -2,7 +2,7 @@
 " 基本設定
 "----------------------------------------
 "検索で大文字小文字区別しない
-:set ic
+set ic
 "自動改行を禁止
 set tw=0
 " 行番号を非表示 (number:表示)
@@ -26,7 +26,7 @@ set nocompatible
 filetype plugin on
 source $VIMRUNTIME/macros/matchit.vim
 "undofileを無効化[.un~]
-:set noundofile
+set noundofile
 " スワップファイルは使わない(ときどき面倒な警告が出るだけで役に立ったことがない)
 set noswapfile
 
@@ -103,3 +103,9 @@ autocmd BufWritePost *
       \ if exists('b:git_dir') && executable(b:git_dir.'/hooks/ctags') |
       \   call system('"'.b:git_dir.'/hooks/ctags" &') |
       \ endif
+
+" mdのファイルもfiletypeがmarkdownとなるようにする
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
