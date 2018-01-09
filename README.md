@@ -8,9 +8,22 @@ add snippet bashrc.
 export XDG_CONFIG_HOME=~/.config
 ~~~
 
-install neovim and set.
+install neovim.
 ~~~
 $ brew install neovim
+~~~
+
+if your dev is centos6, do this.
+~~~
+$ sudo yum -y install libtool autoconf automake cmake gcc gcc-c++ make pkgconfig unzip
+$ git clone https://github.com/neovim/neovim
+$ cd neovim
+$ make
+$ sudo make install
+~~~
+
+set
+~~~
 $ mkdir ~/.config
 $ cd ~/.config
 $ git clone git@github.com:sueshin/nvim.git
