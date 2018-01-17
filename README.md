@@ -48,6 +48,24 @@ ctags --tag-relative=yes -R -f .git/tags.$$
 mv .git/tags.$$ .git/tags
 ~~~
 
+set alias
+~~~
+git config --global alias.ctags '!.git/hooks/ctags'
+~~~
+
+set git hooks(post-checkout, post-commit, post-merge)
+~~~
+.git/hooks/ctags >/dev/null 2>&1 &
+~~~
+
+and this too.(post-rewrite)
+~~~
+#!/bin/sh
+case "$1" in
+  rebase) exec .git/hooks/post-merge ;;
+esac
+~~~
+
 ~~~
 chmod 755 .git/hooks/ctags
 ~~~
