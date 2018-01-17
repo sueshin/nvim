@@ -18,7 +18,8 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 " バックアップファイルを作成しない (次行の先頭の " を削除すれば有効になる)
 set nobackup
 " クリップボードを共有
-set clipboard+=unnamed
+set clipboard=unnamed,unnamedplus
+" set clipboard+=unnamedplus
 " viminfoを作成しない
 set viminfo=
 "matchitを有効にする
@@ -99,13 +100,21 @@ syntax enable
 set background=light
 colorscheme solarized
 
-autocmd BufWritePost *
-      \ if exists('b:git_dir') && executable(b:git_dir.'/hooks/ctags') |
-      \   call system('"'.b:git_dir.'/hooks/ctags" &') |
-      \ endif
-
 " mdのファイルもfiletypeがmarkdownとなるようにする
 augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
+
+" autocmd BufWritePost *
+"       \ if exists('b:git_dir') && !empty(glob(b:git_dir.'/hooks/ctags')) |
+"       \   call system('"'.b:git_dir.'/hooks/ctags"') |
+"       \ endif
+"
+
+" ctrlpでは.gitignoreを無視する
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" vim終了時にキャッシュクリアしない(default:1)
+let g:ctrlp_clear_cache_on_exit = 0
+
+autocmd VimEnter * execute 'terminal'
