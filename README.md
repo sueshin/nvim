@@ -22,6 +22,15 @@ $ make
 $ sudo make install
 ~~~
 
+if you dont'have latest cmake.
+~~~
+$ cd /tmp
+$ wget https://cmake.org/files/v3.7/cmake-3.7.2.tar.gz
+$ tar -zxvf cmake-3.7.2.tar.gz
+$ cd cmake-3.7.2.tar
+$ ./bootstrap && make && make install
+~~~
+
 set
 ~~~
 $ mkdir ~/.config
