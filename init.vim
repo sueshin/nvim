@@ -127,3 +127,6 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_mruf_max            = 500
 " 新規ファイル作成時にタブで開く
 let g:ctrlp_open_new_file       = 1
+
+" vuejs
+autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
